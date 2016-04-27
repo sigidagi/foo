@@ -4,7 +4,9 @@ project(fooLua)
 
 #set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
-set(CMAKE_CXX_FLAGS "-g --std=c++14 ")
+set(CMAKE_CXX_FLAGS "-g --std=c++11 ")
+set(CMAKE_EXE_LINKER_FLAGS "-Wl, -E ")
+
 find_package(Lua)
 
 include_directories(
