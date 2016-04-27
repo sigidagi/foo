@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.6)
 
 project(fooLua)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
+#set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
 set(CMAKE_CXX_FLAGS "-g --std=c++14 ")
 find_package(Lua)
@@ -21,6 +21,7 @@ set(FOO_SOURCE
 add_executable(${PROJECT_NAME}  ${FOO_SOURCE})
 target_link_libraries(${PROJECT_NAME} 
     ${LUA_LIBRARIES}
+    dl
 )
 
 set(CMAKE_INSTALL_PREFIX "/usr")
